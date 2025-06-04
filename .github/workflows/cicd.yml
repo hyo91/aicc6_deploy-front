@@ -14,15 +14,15 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
       - name: Create env file
-       run: |
+        run: |
        touch .env
        echo "${{VITE_AUTH_CLIENT_ID}}" >> .env
       - name: Sign in to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
-       run: docker build -t so91/aicc6_tesk_front .
+        run: docker build -t so91/aicc6_tesk_front .
       - name: Push Docker Image
-       run: docker push so91/aicc6_tesk_front:latest
+        run: docker push so91/aicc6_tesk_front:latest
        
  deploy:
    needs: build
