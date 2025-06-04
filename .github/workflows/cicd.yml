@@ -29,9 +29,9 @@ jobs:
    runs-on: aws-ec2
    steps:
      -name: Pull image from docker hub
-      run: docker pull so91/aicc6_tesk_front:latest
+       run: docker pull so91/aicc6_tesk_front:latest
      -name: Delete Existing Container
-      run: docker rm -f task-container
+       run: docker rm -f task-container
      -name: Run container
-     run: docker run -d -p 80:80 --name task-container so91/aicc6_tesk_front
+       run: docker run -d -p 80:80 --name task-container so91/aicc6_tesk_front
       
